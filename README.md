@@ -17,27 +17,26 @@ Tasks belong to lists, and can be moved from one list to another.
 ### Reports
 - Users can report public boards for being inappropriate
 - Reports can be accessed by signing into a pre-defined admin account, where:
- - Reports can be dismissed (invalid report)
- - Reports can be handled (by deleting the reported user & their data)
-
+	- Reports can be dismissed (invalid report)
+	- Reports can be handled (by deleting the reported user & their data)
 
 ### Views
 * **All pages**
- * Header with "Home", "My Boards" and "Login" / "My Account"
+	* Header with "Home", "My Boards" and "Login" / "My Account"
 * **Home page ( `.../` )**
- * List of all public boards
+	* List of all public boards
 * **Account page ( `.../account` )**
- * Delete account & data button
+	* Delete account & data button
 * **Board page ( `.../boards/[uuid]` )**
- * **Not allowed:** A page with "Not allowed"
- * **Default:** Board name and task lists
- * **Contributor:** "Default" + edit lists + edit tasks
- * **Creator:** "Default" + "Contributor" + board settings
- * --- Views based on conditions ---
- * *Board private, user not contributor or creator* : "Not allowed"
- * *Board public, user not contributor or creator* : "Default"
- * *User is a contributor* : "Contributor"
- * *User is the creator of the board* : "Creator"
+	* **Not allowed:** A page with "Not allowed"
+	* **Default:** Board name and task lists
+	* **Contributor:** "Default" + edit lists + edit tasks
+ 	* **Creator:** "Default" + "Contributor" + board settings
+ 	* --- Views based on conditions ---
+ 	* *Board private, user not contributor or creator* : "Not allowed"
+ 	* *Board public, user not contributor or creator* : "Default"
+ 	* *User is a contributor* : "Contributor"
+ 	* *User is the creator of the board* : "Creator"
 * **Board page settings modal ( `.../boards/[uuid]#settings` )**
- * Add/remove users to board by username
- * Delete board button
+	* Add/remove users to board by username
+	* Delete board button
