@@ -4,6 +4,12 @@ This application is a kanban board platform.
 Users can create collaborative kanban boards with task lists.
 Tasks belong to lists, and can be moved from one list to another.
 
+## Current status
+Application can be tested at https://tsoha.vladis.xyz/
+- A prototype, which includes a public board page, fully styled. 
+- Still missing all login / sharing functionality
+- Still missing PostgreSQL implementation of the database
+
 ### Users
 - A user can register and log-in (username & password)
 - A user can see a list of all public boards on the home page
