@@ -1,0 +1,39 @@
+<div class="card task" hx-vals='{"task_index": {{ task_index }}}'>
+    <div class="content" hx-get="/boards/{{ board_id }}/{{ list_index }}/edit"  hx-trigger="click" hx-target="closest .task" hx-swap="outerHTML">
+        <p class="text">{{ task }}</p>
+    </div>
+    
+    <div class="control-wrapper">
+        <div class="control-icon">
+            ≡
+        </div>
+        <div class="control-panel">
+            <div 
+                class="control-item" 
+                title="Delete task" 
+                hx-post="/boards/{{ board_id }}/{{ list_index }}/delete"
+                hx-target="closest .list" 
+                hx-swap="outerHTML">
+                x
+            </div>
+            <div 
+                class="control-item" 
+                title="Move left" 
+                hx-post="/boards/{{ board_id }}/{{ list_index }}/move"
+                hx-target="closest .board" 
+                hx-vals='{"action": "left"}' 
+                hx-swap="outerHTML">
+                < 
+            </div>
+            <div 
+                class="control-item" 
+                title="Move right" 
+                hx-post="/boards/{{ board_id }}/{{ list_index }}/move"
+                hx-target="closest .board" 
+                hx-vals='{"action": "right"}' 
+                hx-swap="outerHTML">
+                >
+            </div>
+        </div>
+    </div>
+</div>

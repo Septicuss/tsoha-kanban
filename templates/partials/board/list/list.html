@@ -1,0 +1,49 @@
+<div class="list" hx-vals='{"list_index": {{ list_index }}}'>
+    <div class="details">
+        <h3 class="title" hx-get="/boards/{{ board_id }}/edit" hx-trigger="click" hx-target="closest .list"
+            hx-swap="outerHTML" Z>
+            {{ list.title }}
+        </h3>
+
+        <div class="control-wrapper">
+            <div class="control-icon">
+                ≡
+            </div>
+            <div class="control-panel">
+                <div 
+                    class="control-item" 
+                    title="Delete" 
+                    hx-post="/boards/{{ board_id }}/delete"
+                    hx-target="closest .board" 
+                    hx-swap="outerHTML">
+                    x
+                </div>
+                <div 
+                    class="control-item" 
+                    title="Move left" 
+                    hx-post="/boards/{{ board_id }}/move"
+                    hx-target="closest .board" 
+                    hx-vals='{"action": "left"}' 
+                    hx-swap="outerHTML">
+                    < 
+                </div>
+                <div 
+                    class="control-item" 
+                    title="Move right" 
+                    hx-post="/boards/{{ board_id }}/move"
+                    hx-target="closest .board" 
+                    hx-vals='{"action": "right"}' 
+                    hx-swap="outerHTML">
+                    >
+                </div>
+                </div>
+            </div>
+        </div>
+
+        {% for task in list.tasks %}
+        {% set task_index = loop.index - 1 %}
+        {% include '/partials/board/task/task.html' %}
+        {% endfor %}
+
+        {% include '/partials/board/task/add-task.html' %}
+    </div>

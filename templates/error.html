@@ -1,0 +1,8 @@
+{% extends "layouts/layout.html" %}
+{% block title %}Error {{error}}{% endblock %}
+{% block content %}
+<div class="error">
+    <h1>Error - {{ error }}</h1>
+    <a href="/">Return to home page</a>
+</div>
+{% endblock %}
