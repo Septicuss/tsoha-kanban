@@ -1,0 +1,12 @@
+{% extends "layouts/layout.html" %}
+{% block title %}Login{% endblock %}
+{% set css_file = 'login.css' %}
+{% block content %}
+
+    <div class="login">
+        <h1>Login</h1>
+
+        {% include '/partials/login/login-form.html' %}
+    </div>
+
+{% endblock %}

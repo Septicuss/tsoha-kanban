@@ -1,0 +1,245 @@
+/* --- board.html --- */
+.board {
+    margin: auto;
+
+    /* Title & edit button of a board */
+
+    & .details {
+        display: flex;
+
+        & .settings {
+            margin: auto;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    }
+
+    /* Lists */
+
+    & .lists {
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Up to 3 columns */
+        gap: 1rem;
+
+        & .edit {
+            max-height: 2rem;
+            color: red;
+
+            & input {
+                max-height: 2rem;
+
+            }
+        }
+
+        & .list {
+            display: flex;
+            flex-direction: column;
+            min-width: 5rem;
+            gap: 1rem;
+
+            & .details {
+                display: flex;
+                position: relative;
+
+                & .control-wrapper {
+                    margin-left: auto;
+                    font-size: 20px;
+                    line-height: 1;
+                    position: absolute;
+                    right: 10px;
+
+                    & .control-panel {
+                        position: absolute;
+                        border-radius: 0.2rem;
+                        padding: 0.2rem;
+                        outline: 1px solid gray;
+                        background-color: white;
+                        right: -10px;
+                        display: none;
+                        gap: 1rem;
+                        cursor: pointer;
+
+                        & .control-item {
+                            cursor: pointer;
+                            padding: 15px;
+                            margin: -15px;
+                        }
+
+                        & .control-item:hover {
+                            color: red;
+                        }
+
+                    }
+                }
+
+
+                & .control-wrapper:hover .control-panel {
+                    display: flex;
+                }
+
+                & .control-wrapper:hover .control-icon {
+                    display: none;
+                }
+
+                & .title {
+                    text-wrap: nowrap;
+                    overflow: hidden;
+                    margin: 0;
+                    margin-right: 2rem;
+                    text-overflow: clip;
+                }
+
+            }
+
+            & .card {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                position: relative;
+                text-align: left;
+                background-color: lightgray;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                display: flex;
+
+                & .control-wrapper {
+                    line-height: 1;
+                    font-size: 20px;
+                    position: absolute;
+                    right: 10px;
+
+                    & .control-panel {
+                        position: absolute;
+                        border-radius: 0.2rem;
+                        padding-bottom: 0.2rem;
+                        outline: 1px solid gray;
+                        background-color: white;
+                        display: none;
+                        gap: 1rem;
+                        cursor: pointer;
+                        right: -10px;
+
+                        & .control-item {
+                            cursor: pointer;
+                            padding: 15px;
+                            margin: -15px;
+                        }
+
+                        & .control-item:hover {
+                            color: red;
+                        }
+
+                    }
+                }
+
+
+                & .control-wrapper:hover .control-panel {
+                    display: flex;
+                }
+
+                & .control-wrapper:hover .control-icon {
+                    display: none;
+                }
+
+                & .content {
+                    max-width: 100%;
+
+                    & .text {
+                        word-wrap: break-word;
+                        flex-wrap: wrap;
+                        overflow: hidden;
+                    }
+                }
+            }
+
+            & .add {
+                min-height: 2rem;
+                background-color: rgba(211, 211, 211, 0.481);
+                text-align: center;
+                display: table;
+
+                & span {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+            }
+
+            & .add:hover {
+                background-color: rgba(211, 211, 211, 0.711);
+                cursor: pointer;
+            }
+
+            & .task {
+                border-radius: 0.2rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+                & textarea {
+                    background-color: transparent;
+                    border: none;
+                    resize: none;
+                    overflow: hidden;
+                    min-height: 5rem;
+                    box-sizing: border-box;
+                }
+
+            }
+
+        }
+
+    }
+
+    & .add-list {
+        min-height: 2rem;
+        outline: 1px solid gray;
+        border-radius: 0.2rem;
+        text-align: center;
+        display: table;
+
+        & span {
+            margin: auto;
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+
+    & .add-list:hover {
+        background-color: rgba(211, 211, 211, 0.711);
+        cursor: pointer;
+    }
+
+}
+
+@media only screen and (max-width: 60rem) {
+    .board {
+        & .lists {
+            grid-template-columns: repeat(2, 1fr); /* Up to 3 columns */
+        }
+    }
+}
+
+@media only screen and (max-width: 50rem) {
+    .board {
+        & .lists {
+            grid-template-columns: repeat(2, 1fr); /* Up to 2 columns */
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .board {
+
+        & .details {
+            flex-direction: column;
+
+            & .settings {
+                margin: 0;
+                margin-right: auto;
+                margin-bottom: 2rem;
+            }
+        }
+
+        & .lists {
+            grid-template-columns: 1fr; /* Up to 1 column */
+        }
+    }
+
+}

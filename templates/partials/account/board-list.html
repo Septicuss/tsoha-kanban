@@ -1,0 +1,18 @@
+<div class="board-list">
+    {% if not boards and not personal %}
+        <p>Nothing here...</p>
+    {% endif %}
+    {% for board in boards %}
+        <a href="/boards/{{ board.id }}">
+            <div class="board">
+                <span class="title">{{ board.name }}</span>
+                <span class="details">{{ board.details }}</span>
+            </div>
+        </a>
+    {% endfor %}
+
+    {% if personal %}
+    {% include 'partials/account/create-board.html' %}
+    {% endif %}
+</div>
+

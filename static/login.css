@@ -1,0 +1,14 @@
+/* --- login.html --- */
+
+.login {
+
+    & .form-container {
+        & .error {
+            color: red;
+        }
+
+        gap: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+}

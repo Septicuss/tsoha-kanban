@@ -1,0 +1,21 @@
+{% extends "layouts/layout.html" %}
+{% block title %}Account{% endblock %}
+{% set css_file = 'account.css' %}
+{% block content %}
+
+    <h1>{{ user.username }}</h1>
+    <h2>My boards</h2>
+    {% set boards = my_boards %}
+    {% set personal = true %}
+    {% include "partials/account/board-list.html" %}
+    <h2>Shared boards</h2>
+    {% set boards = shared_boards %}
+    {% set personal = false %}
+    {% include "partials/account/board-list.html" %}
+    <h2>Settings</h2>
+    <h3>Log out</h3>
+    <button hx-post="/account/logout">Log out</button>
+    <h3>Delete account</h3>
+    <p style="color: red"><strong>Warning</strong>: This action is immediate</p>
+    <button hx-post="/account/delete">Delete account</button>
+{% endblock %}

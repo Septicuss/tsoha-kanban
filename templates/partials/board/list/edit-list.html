@@ -1,9 +1,9 @@
-<div class="list edit" hx-vals='{"list_index": {{ list_index }}}'>
+<div class="list edit" hx-vals='{"list_id": {{ list_id }}}'>
     <div class="details">
         <input 
             name="list_name" 
             type="text" 
-            hx-post="/boards/{{ board_id }}/{% if list_index != None %}edit{% else %}new{% endif %}"
+            hx-post="/boards/{{ board_id }}/{% if list_id != None %}edit{% else %}new{% endif %}"
             hx-trigger="keydown[(key=='Enter')], blur" 
             hx-target="closest .board"
             value="{{ placeholder }}" 

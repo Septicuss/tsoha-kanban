@@ -1,0 +1,21 @@
+.board-list {
+    & .board {
+        display: flex;
+        flex-direction: column;
+        outline: 1px solid #615f5f;
+        padding: 0.5rem;
+        border-radius: 0.3rem;
+        max-width: 15rem;
+
+        & .title {
+            font-weight: bold;
+            font-size: large;
+        }
+
+    }
+
+    & .board:hover {
+        background-color: rgba(211, 211, 211, 0.711);
+        cursor: pointer;
+    }
+}

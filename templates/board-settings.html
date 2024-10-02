@@ -1,0 +1,6 @@
+{% extends "layouts/layout.html" %}
+{% block title %}{{ board.name }} - Settings{% endblock %}
+{% set css_file = 'board.css' %}
+{% block content %}
+    {% include 'partials/board/board-settings.html' %}
+{% endblock %}

@@ -1,7 +1,9 @@
 {% extends "layouts/layout.html" %}
-{% block title %}{{ board.title }}{% endblock %}
+{% block title %}{{ board.name }}{% endblock %}
+{% set css_file = 'board.css' %}
 {% block content %}
 
+{% set board_id = board.id %}
 {% include '/partials/board/board.html' %}
 
 {% endblock %}

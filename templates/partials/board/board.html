@@ -1,14 +1,21 @@
 <div class="board">
     <div class="details">
-        <h1>Board - {{ board.title }}</h1>
-        <div class="edit">≡</div>
+        <h1>Board - {{ board.name }}</h1>
+        {% if modify %}
+            <a href="/boards/{{ board.id }}/settings" class="settings">Settings</a>
+        {% else %}
+            <p class="settings">[Read only]</p>
+        {% endif %}
     </div>
-    
+
     <div class="lists">
         {% for list in board.lists %}
-        {% set list_index = (loop.index - 1) %}
-        {% include '/partials/board/list/list.html' %}
+            {% set board_id = board.id %}
+            {% set list_id = list.id %}
+            {% include '/partials/board/list/list.html' %}
         {% endfor %}
-        {% include '/partials/board/list/add-list.html' %}
+        {% if modify %}
+            {% include '/partials/board/list/add-list.html' %}
+        {% endif %}
     </div>
 </div>

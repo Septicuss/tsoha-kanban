@@ -1,21 +1,28 @@
 {% extends "layouts/layout.html" %}
 {% block title %}Home{% endblock %}
+{% set css_file = 'index.css' %}
 {% block content %}
 
-<h1>Home</h1>
-<div class="home">
-    <div class="boards">
-        <div class="board">
-            <h3>Meow Board</h3>
-            <p>By <strong>Septicuss</strong></p>
+    <div class="home">
+        <h1>Home</h1>
+        <span>Here are some public boards:</span>
+
+        <div class="board-list">
+            {% if not boards %}
+                <p>No public boards...</p>
+            {% endif %}
+            {% for board in boards %}
+                <a href="/boards/{{ board.id }}">
+                    <div class="board">
+                        <span class="title">{{ board.name }}</span>
+                        <span class="details">{{ board.author }}</span>
+                    </div>
+                </a>
+            {% endfor %}
         </div>
-        <div class="board">
-            <h3>Meow Board</h3>
-            <p>By <strong>Septicussdaiwudhaiuwdha</strong></p>
-        </div>
-        
+
+
     </div>
-</div>
 
 
 {% endblock %}

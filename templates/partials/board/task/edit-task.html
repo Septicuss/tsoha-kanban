@@ -1,6 +1,6 @@
-<div class="card" hx-vals='{"task_index": {{ task_index }}}'>
+<div class="card" hx-vals='{"task_id": {{ task_id }}}'>
     <textarea name="task"
-        hx-post="/boards/{{ board_id }}/{{ list_index }}/{% if task_index != None %}edit{% else %}new{% endif %}"
+        hx-post="/boards/{{ board_id }}/{{ list_id }}/{% if task_id != None %}edit{% else %}new{% endif %}"
         hx-target="closest .list" hx-trigger="keydown[(shiftKey&&key=='Enter')], blur" hx-swap="outerHTML"
         autofocus>{{ placeholder }}</textarea>
     <p>Shift+Enter to save</p>

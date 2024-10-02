@@ -1,0 +1,54 @@
+<div class="settings">
+    <h1>Board Settings</h1>
+
+    {% if saved %}
+    <span style="color: green;">Saved!</span>
+    {% endif %}
+
+    {% if added %}
+    <span style="color: green;">Added collaborators: {{ added }}</span>
+    {% endif %}
+
+    {% if removed %}
+    <span style="color: red;">Removed collaborators: {{ removed }}</span>
+    {% endif %}
+
+    {% if unknown %}
+    <span style="color: red;">Collaborators not found: {{ unknown }}</span>
+    {% endif %}
+
+
+
+    <form hx-post="/boards/{{ board.id }}/settings" hx-target="closest .settings">
+
+        <div>
+            <label for="board_name">Board Name</label>
+            <input type="text" id="board_name" name="name" value="{{ board.name }}">
+        </div>
+
+        <div>
+            <label for="board_public">Board Public</label>
+            <input type="checkbox" id="board_public" name="public" {% if board.public %}checked{% endif %}>
+        </div>
+
+        {% if owner %}
+        <div>
+            <label for="board_collaborators">Board Collaborators (usernames, each on their own row)</label><br>
+            <textarea id="board_collaborators" name="collaborators">{{ board.collaborators | join('\n') }}</textarea>
+        </div>
+
+        <div>
+            <label for="board_delete">Delete Board</label>
+            <input type="checkbox" id="board_delete" name="delete">
+        </div>
+        {% endif %}
+
+        <div>
+            <input type="submit" value="Save">
+        </div>
+    </form>
+    <br>
+    <br>
+    <br>
+    <a href="/boards/{{ board.id }}">< Return to board</a>
+</div>

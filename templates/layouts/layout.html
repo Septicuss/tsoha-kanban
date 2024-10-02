@@ -3,20 +3,26 @@
     <title>Kanban - {% block title %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/static/style.css">
+    {% if css_file %}
+    <link rel="stylesheet" href="/static/{{ css_file }}">
+    {% endif %}
     <script src="https://unpkg.com/htmx.org@2.0.2"></script>
 
 </head>
 
 <body>
-        <tt>
-            <div class="navigation-container">
+        <tt class="page">
+            <div class="navigation">
                 <nav>
-                    <a href="#">Home</a>
-                    <a href="#">My Boards</a>
-                    <a href="#">Login</a>
+                    <a href="/">Home</a>
+                    {% if session['username'] %}
+                    <a href="/account">Account</a>
+                    {% else %}
+                    <a href="/login">Login</a>
+                    {% endif %}
                 </nav>
             </div>
-            
+
             <div class="content">
                 {% block content %}{% endblock %}
             </div>

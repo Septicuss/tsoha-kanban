@@ -4,4 +4,8 @@ from os import getenv
 app = Flask(__name__)
 app.secret_key = getenv("SECRET_KEY")
 
-import routes
+
+import routes.routes
+import routes.account
+import routes.home
+import routes.board
