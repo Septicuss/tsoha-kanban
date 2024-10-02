@@ -37,7 +37,7 @@ def login_post():
     user_id = users.create_user(username, password)
     session['username'] = username
     response = make_response()
-    response.headers['HX-Redirect'] = '/'
+    response.headers['HX-Redirect'] = '/account'
     return response
 
 @app.route('/account')
