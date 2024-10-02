@@ -75,4 +75,4 @@ def logout(user: users.User):
     return response
 
 def get_simple_board(board: boards.Board):
-    return {"id": board.board_id, "name": board.name, "details": f"{"Public" if board.is_public else "Private"} - { len(board.get_collaborator_ids()) } Collaborators"}
+    return {"id": board.board_id, "name": board.name, "details": f"{'Public' if board.is_public else 'Private'} - { len(board.get_collaborator_ids()) } Collaborators"}
