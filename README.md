@@ -36,7 +36,7 @@ flask run
 ```
 
 ## Current status
-Application can be tested freely at https://tsoha.vladis.xyz/
+Application is hosted on a paid Hetzner VPS. It can be tested freely at https://tsoha.vladis.xyz
 - All mentioned features and views are implemented
 - Future steps are improving the UX and overall look of the project
 - Any suggested features are welcome!
